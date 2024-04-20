@@ -23,43 +23,55 @@
 <body >
 
 <?php include("../components/nav.php") ?>
-
 <div class="container">
-    <div class="row p-1 d-flex flex-column   align-items-center ">
+    <div class="row p-1 d-flex flex-column   align-items-center">
         <div class="col-lg-6 col-md-10 col-12 text-center m-auto ">
             <img src="../images/logo.png"  class="m-auto w-50 " alt="logo">
         </div>
-        <form class="bg-primary p-4  col-lg-6 col-md-10 col-12 ">
-            <div class="mb-3">
-                <label for="email" class="form-label ">
-                    <span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
-                        <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/>
-                    </svg>  
-                    </span> 
-                     Email
-                </label>
-                <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+        <form class="bg-primary p-z  col-lg-6 col-md-10 col-12 ">
+            <div class="row d-flex justify-content-between ">
+                <div class="mb-3 col-12 col-sm-6">
+                    <label for="prenom" class="form-label ">
+                        Prénom
+                    </label>
+                    <input type="text" class="form-control" id="prenom" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3  col-12 col-sm-6">
+                    <label for="nom" class="form-label">   
+                    Nom
+                    </label>
+                    <input type="text" class="form-control" id="nom">
+                </div>
             </div>
             <div class="mb-3">
-                <label for="password" class="form-label">
-                <span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill m-0 p-0" viewBox="0 0 16 16">
-                        <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"/>
-                    </svg> 
-                    </span>     
-                Mot De Passe</label>
+                <label for="date" class="form-label">   
+                Date de naissance
+                </label>
+                <input type="date" class="form-control" id="date">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">   
+                Email
+                </label>
+                <input type="email" class="form-control" id="email">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">   
+                Mot de passe
+                </label>
                 <input type="password" class="form-control" id="password">
             </div>
-            <div class="mb-3 form-check  p-1 d-flex justify-content-between align-items-center ">
-                <a href="#" class="text-info fw-lighter fs-6">Mot de passe oublié?</a>
-                <button type="submit" class="btn btn-secondary btn-lg  fw-bold fs-6">Se connecter</button>
+            <div class=" form-check d-flex justify-content-between     align-items-center ">
+                <div class="mb-3 col-7">
+                    <input type="checkbox" class="form-checkbox-input"  id="terms">
+                    <label for="terms">J'accepte <a href="#" class="text-info">les termes et les conditions d'utulisations.</a></label>
+                </div>
+                <button type="submit" class="btn btn-secondary btn-lg mb-3 fw-bold fs-6 ">Créer compte</button>
             </div>
-            <a href="register.php" class="btn-lg btn-transparent border-2 border  btn w-100 fs-6 fw-bold ">Vous n'avez pas un compte?</a>
+            <a href="login.php" class="btn-lg btn-transparent border-2 border  btn w-100 fs-6 fw-bold ">Vous avez déjà un compte?</a>
         </form>
     </div>
 </div>
-
 </body>
 <script src="../javascript/heroImageAlternator.js"></script>
 <script src="../javascript/subscriptionPlans.js"></script>

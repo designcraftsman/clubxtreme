@@ -1,18 +1,44 @@
 
 
 
-    
     body{
-        scroll-behavior: smooth;
+        scroll-behavior: smooth !important;
         //font-family: "Montserrat", sans-serif;
-        font-family: Montreux Classic,sans-serif;
+        //font-family: Montreux Classic,sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
         line-height: 20px;
         font-weight: 500;
         section{
             //max-width: 1300px;
             margin: auto;
             padding: 20px;
+            @media (max-width: 800px){
+                padding: 0;
+            }
+            ul,li{
+                list-style: none;
+            }
         }
+        body{margin:0;}
+
+          
+
+
+
+
+
+   
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(100px); /* Adjust the initial translateY value */
+            transition:  0.5s ease, transform 0.5s ease;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+          
         a , a:hover{
             text-decoration: none;
         }
@@ -86,6 +112,9 @@
         #hero-section {
             position: relative;
             height: 100vh;
+            @media (max-width:455px) {
+                height: 110vh;
+            }
             overflow: hidden;
         
             
@@ -117,6 +146,7 @@
             }
         
             .content {
+                margin: auto;
                 width: 50%;
                 position: absolute;
                 top:40vh ; // Center vertically
@@ -130,7 +160,7 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: start;
-                padding: 20px;
+                padding:10px 20px 10px 20px;
         
                 @media (max-width: 800px) {
                     padding: 5px;
@@ -220,19 +250,181 @@
             
             
         }
-        
-        
-        
-        
-        
-    ul , ol {
-        padding-left: 0;
-    }  
-        
-          
-          
+        ul , ol {
+            padding-left: 0;
+        }  
         .Testimony-section{
             background-color: $colour-light-gray;
         }
+        footer{
+            a,h5,hr,p,span{
+                color: $colour-black;
+                font-weight: normal;
+                line-height: normal;
+            }
+            span,a,a:hover{
+                font-size: .8em;
+                color: $colour-dark-gray;
+            }
+            a:hover{
+                text-decoration: underline;                
+                font-size: .8em;
+            }
+        }
+        .form-checkbox-input , .form-checkbox-input:hover , .form-checkbox-input:active{
+            border: 1px solid $colour-black;
+        }
+        #opinion-carousel{
+            html,
+            body {
+                height: 100%;
+            }
+
+            body {
+                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 1.5;
+            }
+
+            @mixin breakpoint($point) {
+                @if $point == xxs {
+                    @media (max-width: 480px) {
+                        @content;
+                    }
+                }
+                @else if $point == xs {
+                    @media (max-width: 767px) {
+                        @content;
+                    }
+                }
+                @else if $point == sm {
+                    @media (min-width: 768px) and (max-width : 991px) {
+                        @content;
+                    }
+                }
+                @else if $point == md {
+                    @media (min-width: 768px) and (max-width : 1199px) {
+                        @content;
+                    }
+                }
+                @else if $point == md-d {
+                    @media (min-width: 1200px) and (max-width : 1299px) {
+                        @content;
+                    }
+                } //md-d is of Medium Desktop
+                @else if $point == lg {
+                    @media (max-width: 1440px) {
+                        @content;
+                    }
+                }
+                @else {
+                    @warn "Breakpoint mixin supports: xs, sm, md,md-d, lg";
+                }
+            }
+
+            #wrap {
+                width: 100%;
+                min-height: 100%;
+                height: auto!important;
+                position: relative;
+                padding: 55px 0;
+            }
+
+            .review-title {
+                margin-bottom: 30px;
+            }
+
+            .review-card {
+                &--option-1 {
+                    border: 1px solid #D8D8D8;
+                    padding: 25px;
+                }
+                .review-card-img {
+                    border: 1px solid #eee;
+                    width: 100px;
+                    height: 70px;
+                    background-image: url('https://unsplash.it/200');
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    margin: 0 auto 15px;
+                }
+                .review-author {
+                    .ra-author {
+                        font-size: 18px;
+                        display: block;
+                        margin-bottom: 10px;
+                    }
+                    .ra-rating-star {
+                        margin: 0 0 15px;
+                        padding: 0;
+                        list-style-type: none;
+                        li {
+                            display: inline-block;
+                            margin: 0 -2px;
+                        }
+                    }
+                }
+            }
+
+            #testiCarousel {
+                .carousel-control {
+                    background: none;
+                    width: auto;
+                    top: 50%;
+                    -webkit-transform: translateY(-50%);
+                    -ms-transform: translateY(-50%);
+                    transform: translateY(-50%);
+                    bottom: auto;
+                    text-shadow: 0 0 0;
+                    color: #000;
+                    font-size: inherit;
+                    &.left {
+                        left: -75px;
+                    }
+                    &.right {
+                        right: -75px
+                    }
+                    i {
+                        font-size: 65px;
+                    }
+                }
+            }
+        }
+        .Tutoial{
+            h1{
+                @media (min-width:801px){
+                    margin-bottom: 100px;
+                }
+                text-align: center;
+            }
+            ul{
+
+                text-align: center;
+                li{
+                    font-size: .8em;
+                }
+            }
+        }
+        .bounce {
+            position: relative;
+            bottom: 30%; 
+            left: 30%; 
+            animation: bounce 2s infinite;
+            img{
+                width: 50px;
+                height: 50px;
+                object-fit: cover;
+            }
+          }
+          
+          @keyframes bounce {
+            0%, 100% {
+              transform: translateY(0);
+            }
+            50% {
+              transform: translateY(-20px);
+            }
+          }
     }
 

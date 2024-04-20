@@ -21,7 +21,7 @@ class Membre extends Utilisateur
     public function participerEvenement(Evenement $evenement): void
     {
         // TODO implement here
-        return null;
+        return ;
     }
 
     /**
@@ -31,16 +31,16 @@ class Membre extends Utilisateur
     public function annulerParticipationEvenement(Evenement $evenement): void
     {
         // TODO implement here
-        return null;
+        return ;
     }
 
     /**
      * @return Evaluation
      */
-    public function evaluerProgression(): Evaluation
+    public function evaluerProgression(): string
     {
         // TODO implement here
-        return null;
+        return "Evaluation";
     }
 
 }

@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var heroSection = document.getElementById("hero-section");
     var backgroundImage = document.querySelector(".background-image");
 
-    var herosecbg = ["../Images/hero section image.webp", "../Images/basketball.webp"];
+    var herosecbg = ["../Images/hero section image.webp", "../Images/basketball.webp" , "../Images/ice_hockey.webp"] ;
     var currentbgIndex = 0;
 
     function changeBackground() {

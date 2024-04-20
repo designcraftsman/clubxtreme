@@ -1,0 +1,49 @@
+#trainers{
+    #trainer--container{
+        box-shadow: 0 15px 35px 10px rgba(21,31,59,.1);
+        background: linear-gradient(123deg,white 50%, #77CC00 -5.77%, #D7DF21 108.04%) !important;
+        a,h1{
+            color: $colour-dark-gray2;
+            i{
+                color: $colour-blue;
+            }
+        }
+        .card {
+            display: flex; /* Use flexbox */
+            align-items: center; /* Align items vertically */
+            padding: 5px;
+            width: 40%; 
+            @media (max-width: 768px) {
+                width: 95%;
+                display: inline-block; /* Display cards inline */
+            }
+            height: auto; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+            margin: 10px;
+            flex-direction: row; /* Arrange items horizontally */
+      
+            .card-img-top {
+              width: 30px; 
+              height: 30px; 
+              object-fit: cover;
+              border-top-left-radius: 10px; 
+              border-top-right-radius: 10px;
+              border-radius: 50%;
+            }
+            .card-text{
+                border-radius: 8px;
+                background-color: #ccd4da;
+                width: 63px;
+                height: 10px;
+            }
+            .card-text2{
+                border-radius: 8px;
+                background-color: #b1b7bc;
+                width: 95%px;
+                height: 10px;
+            }
+        }
+          
+    }
+}
