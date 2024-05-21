@@ -1,45 +1,65 @@
 <?php
-
 declare(strict_types=1);
-
 
 class Entraineur extends Utilisateur
 {
-
-    /** @var string */
+    private int $idUtilisateur;
+    private int $idEntraineur;
     private string $specialite;
-
-    /** @var string */
     private string $niveauQualification;
 
-    /**
-     * Default constructor
-     */
-    public function __construct()
+    public function __construct(int $idUtilisateur, int $idEntraineur, string $nom, string $prenom, string $email, string $motDePasse, DateTime $dateDeNaissance, string $numDeTelephone, string $specialite, string $niveauQualification)
     {
-        // ...
+        parent::__construct($idUtilisateur, $nom, $prenom, $email, $motDePasse, $dateDeNaissance, $numDeTelephone);
+        $this->idUtilisateur = $idUtilisateur;
+        $this->idEntraineur = $idEntraineur;
+        $this->specialite = $specialite;
+        $this->niveauQualification = $niveauQualification;
+    }
+    
+    public function getSpecialite(): string
+    {
+        return $this->specialite;
     }
 
-    /**
-     * @param Date $date 
-     * @param Heure $heure 
-     * @param string $lieu 
-     * @return void
-     */
-    public function planifierSceanceEntrainement(Date $date, Heure $heure, string $lieu): void
+    public function getNiveauQualification(): string
     {
-        // TODO implement here
-        return null;
+        return $this->niveauQualification;
     }
 
-    /**
-     * @param [object Object] $membre 
-     * @return Evaluation
-     */
-    public function evaluerMembre([object Object] $membre): Evaluation
+    public function planifierSeanceEntrainement(DateTime $date, string $lieu): void
     {
-        // TODO implement here
-        return null;
+        // TODO: Implement method
     }
 
+    public function evaluerMembre(Membre $membre): string
+    {
+        // TODO: Implement method
+        return "Evaluation";
+    }
+
+    // Getter method for ID
+    public function getIdUtilisateur(): int
+    {
+        return $this->idUtilisateur;
+    }
+
+    // Getter method for ID
+    public function getIdEntraineur(): int
+    {
+        return $this->idEntraineur;
+    }
+
+    // Setter method for specialite
+    public function setSpecialite(string $specialite): void
+    {
+        $this->specialite = $specialite;
+    }
+
+    // Setter method for niveauQualification
+    public function setNiveauQualification(string $niveauQualification): void
+    {
+        $this->niveauQualification = $niveauQualification;
+    }
 }
+?>

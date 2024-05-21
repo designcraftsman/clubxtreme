@@ -1,0 +1,91 @@
+.asideNavbarAnimation{
+    animation: asideNavbar 300ms ease-in-out;
+}
+
+@keyframes asideNavbar{
+    0%{
+        transform: translateX(-300px);
+        opacity: 0;
+    }
+     100%{
+        transform: translateX(0);
+        opacity: 1  ;
+    }
+}
+
+.headersAnimation{
+    animation: headers 300ms ease-in-out;
+}
+
+
+.componentsAnimation{
+    animation: components 600ms ease-in-out;
+}
+
+
+.secondHeadersAnimation {
+
+    animation-name:secondHeaders;
+    animation-duration: 1200ms;
+
+}
+
+.secondComponentsAnimation {
+ /* Delay the start of the animation */
+    animation-name: secondComponents;
+    animation-duration: 1600ms;
+}
+
+
+
+@keyframes headers{
+    0%{
+        transform: translateY(500px);
+        opacity: 0;
+    }100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes components{
+    0%{
+        transform: translateY(500px);
+        opacity: 0;
+    }100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+
+@keyframes secondHeaders {
+    0% {
+        transform: translateY(900px);
+        opacity: 0;
+    }
+    40%{
+        transform: translateY(900px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes secondComponents {
+    0% {
+        transform: translateY(900px);
+        opacity: 0;
+    }
+    40%{
+        transform: translateY(900px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

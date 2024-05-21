@@ -1,3 +1,40 @@
+<?php
+session_start(); 
+$_SESSION['loggedin'] = false;
+include_once("../backend/Load.php");
+include_once("../backend/Check.php");
+// Check if the form has been submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Check if email and password are set and not empty
+    if (isset($_POST["email"]) && isset($_POST["password"]) && !empty($_POST["email"]) && !empty($_POST["password"])) {
+        // Retrieve email and password from the form
+        $email = $_POST["email"];
+        $password = $_POST["password"];
+
+        $users = loadUsers();
+        foreach ($users as $user) {
+            if ($user->getEmail() == $email && $user->getMotDePasse() == $password) {
+                // Login success
+                $_SESSION["loggedin"] = true;
+                $_SESSION["user"] = $user;
+                $_SESSION["position"] = checkUser($user);
+                // Set a cookie with the user's email
+                setcookie("user_email", $email, time() + (86400 * 30 * 365), "/"); // 86400 = 1 day in seconds
+
+                header("Location: ./ "); // Redirect to dashboard or homepage
+                echo "<script>alert('Login avec succes');</script>";
+                exit; // Stop further execution
+            }
+        }
+        // If login fails
+        echo "<script>alert('Invalid email or password');</script>";
+    } else {
+        // If email or password is empty
+        echo "<script>alert('Please enter both email and password');</script>";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,12 +61,12 @@
 
 <?php include("../components/nav.php") ?>
 
-<div class="container">
+<div class="container ">
     <div class="row p-1 d-flex flex-column   align-items-center ">
         <div class="col-lg-6 col-md-10 col-12 text-center m-auto ">
             <img src="../images/logo.png"  class="m-auto w-50 " alt="logo">
         </div>
-        <form class="bg-primary p-4  col-lg-6 col-md-10 col-12 ">
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="p-4 col-lg-6 col-md-10 col-12 shadow">
             <div class="mb-3">
                 <label for="email" class="form-label ">
                     <span>
@@ -39,7 +76,7 @@
                     </span> 
                      Email
                 </label>
-                <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">
@@ -49,7 +86,7 @@
                     </svg> 
                     </span>     
                 Mot De Passe</label>
-                <input type="password" class="form-control" id="password">
+                <input type="password" name="password" class="form-control" id="password">
             </div>
             <div class="mb-3 form-check  p-1 d-flex justify-content-between align-items-center ">
                 <a href="#" class="text-info fw-lighter fs-6">Mot de passe oublié?</a>
@@ -57,6 +94,7 @@
             </div>
             <a href="register.php" class="btn-lg btn-transparent border-2 border  btn w-100 fs-6 fw-bold ">Vous n'avez pas un compte?</a>
         </form>
+
     </div>
 </div>
 

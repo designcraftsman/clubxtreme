@@ -1,3 +1,23 @@
+<?php 
+session_start(); 
+if(! isset($_SESSION['loggedin'])){
+  $_SESSION['loggedin'] = false;
+}
+if(isset($_COOKIE['user_email']) and$_SESSION['loggedin'] ){
+  include_once('../backend/Load.php');
+  include_once("../backend/Check.php");
+
+  $users = loadUsers();
+  foreach($users as $user):
+    if($user->getEmail() == $_COOKIE['user_email']):
+      $_SESSION["loggedin"] = true;
+      $_SESSION["user"] = $user;
+      $_SESSION["position"] = checkUser($user);
+      break;
+    endif;
+  endforeach;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,10 +63,13 @@
           <li><i class="bi bi-check"></i>Gérer et comprendre vos membres a l'aide de notre solution.</li>
           <li><i class="bi bi-check"></i>Enregistrer et surveiller toute transaction grace a notre systeme de gestion des finance.</li>
         </ul>
-        <a href="#">Get now <i class="bi bi-arrow-right-short"></i> </a>
+        <a href="#Abonnements">Get now <i class="bi bi-arrow-right-short"></i> </a>
     </div>
 </section>
-<?php include_once("../components/subscriptionPlans.php"); ?>
+<section id="Abonnements">
+  <?php include_once("../components/subscriptionPlans.php"); ?>
+</section>
+
 
 
 
@@ -82,20 +105,16 @@
   </div>
 </section>
 
-<div class="bounce">
-  <img src="../Images/yellow circle.png" alt="Red Circle">
-</div>
-
 <section class="Tutoial mb-5 reveal">
   <div class="container">
-    <div class="row">
+    <div class="row p-1 p-sm-2">
       <div class="col-12 col-md-6">
         <video autoplay playsinline muted loop style="width: 100%; max-width: 100%; height: auto;">
           <source src="../Images/tutorial.mp4" style="object-fit: contain; overflow:clip;" type="video/mp4">
         </video>
       </div>
-      <div class="col-12 col-md-6 tuto--descrtiption p-5">
-        <h1 >Organisation & Planification</h1>
+      <div class="col-12 col-md-6 tuto--descrtiption mt-lg-2">
+        <h1 class="fs-1 mt-lg-4 pt-md-2">Organisation & Planification</h1>
         <hr>
         <ul>
           <li>Planifiez toutes vos séances d'entrainement d'équipe et d'entrainement individuel</li>
@@ -111,11 +130,11 @@
 
 <section class="Tutoial reveal">
   <div class="container">
-    <div class="row">
-      <div class="col-12 col-md-6 tuto--descrtiption" >
-        <h1>Communication</h1>
+    <div class="row p-1 p-sm-2">
+      <div class="col-12 col-md-6 tuto--descrtiption mt-lg-2" >
+        <h1 class="fs-1 mt-lg-5">Communication</h1>
         <hr>
-        <ul>
+        <ul >
           <li>Partagez votre préparation de match ou d'entrainement</li>
           <hr>
           <li>Donnez des instructions claires évitant toute confusion possible</li>

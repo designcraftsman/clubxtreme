@@ -1,0 +1,49 @@
+nav{
+    form{
+        button{
+            background-color: transparent;
+            border: 0;
+        }
+    }
+}
+.offcanvas{
+    form{
+
+        input{
+            border: 1px solid black;
+        }
+        input,button{
+            background-color: transparent !important;
+            color: black !important;
+        }
+
+    }
+}
+.navbar-brand{
+    img{
+        width: 180px !important;
+        @media (max-width:800px){
+            width: 140px !important;
+        }
+    }
+}
+.personnal-space-profile-img{
+    @media (max-width:800px){
+        width: 150px !important;
+    }
+    @media (min-width:801px) and (max-width:1000px){
+        width: 200px !important;
+    }
+}
+
+.user{
+    height: 40px;
+    width: 40px;
+}
+.asideNavbar{
+    min-height: 90vh;
+}
+.bg-secondary {
+    --bs-bg-opacity: 1;
+    background-color: #dbdbdb !important; /* Red color */
+}

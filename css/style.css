@@ -11868,6 +11868,30 @@ body section ul, body section li {
 body body {
   margin: 0;
 }
+body #gallery-page-body {
+  /* Style for gallery image on hover */
+  /* Style for gallery image on small screens */
+}
+body #gallery-page-body .gallery-img {
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+body #gallery-page-body .gallery-img img {
+  max-width: 100% !important;
+  height: auto;
+  display: block;
+}
+body #gallery-page-body .gallery-img:hover {
+  transform: scale(1.05); /* Enlarge image on hover */
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+@media (max-width: 576px) {
+  body #gallery-page-body .gallery-img {
+    margin-bottom: 10px; /* Reduce space between images on small screens */
+  }
+}
 body .reveal {
   opacity: 0;
   transform: translateY(100px); /* Adjust the initial translateY value */
@@ -12033,13 +12057,13 @@ body #hero-section .content ul li {
   font-weight: 600;
 }
 body #hero-section .content ul li i {
-  color: #ffff00;
+  color: #F2C040;
   margin-right: 10px;
 }
 body #hero-section .content a {
   color: inherit;
   font-size: 1em;
-  background-color: #ffff00;
+  background-color: #F2C040;
   padding: 12px 22px;
   border-radius: 48px;
   text-decoration: none;
@@ -12060,7 +12084,6 @@ body #hero-section .content a:hover {
   }
   body #hero-section .content {
     width: 90%; /* Adjust width for smaller devices */
-    max-width: 400px; /* Optional: Limit the maximum width of the content */
     text-align: start;
     padding: 20px;
     position: relative; /* Ensure content does not overlap the image */
@@ -12249,7 +12272,7 @@ body {
   display: inline-block;
   margin-bottom: 0.938em;
   font-size: 0.8rem;
-  background: #ffff00;
+  background: #F2C040;
   color: #000000;
   font-weight: bold;
   padding: 10px 30px;
@@ -12365,24 +12388,24 @@ body {
 }
 
 .card:nth-child(1).active .card__inner svg {
-  color: #ffff00;
+  color: #F2C040;
 }
 .card:nth-child(1).active .card__outer {
-  background: #ffff00;
+  background: #F2C040;
   box-shadow: 5px 18px 13px rgb(142, 142, 0);
 }
 .card:nth-child(2).active .card__inner svg {
-  color: #ffff00;
+  color: #F2C040;
 }
 .card:nth-child(2).active .card__outer {
-  background: #ffff00;
+  background: #F2C040;
   box-shadow: 5px 18px 13px rgb(134, 134, 0);
 }
 .card:nth-child(3).active .card__inner svg {
-  color: #ffff00;
+  color: #F2C040;
 }
 .card:nth-child(3).active .card__outer {
-  background: #ffff00;
+  background: #F2C040;
   box-shadow: 5px 18px 13px rgb(151, 151, 0);
 }
 .card--purple .card__inner svg,
@@ -12913,6 +12936,241 @@ body {
     right: 0;
     left: initial;
   }
+}
+
+.trainers img {
+  height: 400px;
+}
+
+#gallery-page-body ul li {
+  margin: 0 1.5rem 0 0;
+}
+#gallery-page-body a {
+  color: #787878;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+#gallery-page-body a:hover {
+  color: #2e2e2e;
+}
+#gallery-page-body a.active {
+  color: #2e2e2e;
+}
+#gallery-page-body #highlight {
+  color: #ea8478;
+  font-size: 1.25rem;
+}
+#gallery-page-body .gallery {
+  padding: 0 0 4rem 0;
+}
+#gallery-page-body .gallery img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  transform: scale(1);
+  transition: all 0.3s ease-in-out;
+}
+#gallery-page-body .gallery img:hover {
+  transform: scale(1.05);
+}
+#gallery-page-body .img-container {
+  width: 100%;
+  height: auto; /* Change fixed height to auto */
+  cursor: pointer;
+  overflow: hidden;
+}
+#gallery-page-body .img-container:hover .img-content-hover {
+  display: block;
+}
+#gallery-page-body .img-content-hover {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  display: none;
+  padding: 1rem;
+  background: #fff;
+  font-weight: 400;
+  margin-top: 1.25rem;
+  margin-left: -2rem;
+}
+#gallery-page-body .title {
+  color: #2e2e2e;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+#gallery-page-body .category {
+  font-size: 1rem;
+  color: #787878;
+}
+#gallery-page-body .img-content {
+  display: none;
+}
+#gallery-page-body .social, #gallery-page-body .copyright {
+  margin: 1rem;
+}
+#gallery-page-body .social li {
+  display: inline-block;
+}
+#gallery-page-body footer {
+  padding: 1rem 0;
+  background: #f7f7f7;
+  text-align: center;
+}
+@media (min-width: 860px) {
+  #gallery-page-body nav ul {
+    justify-content: flex-end;
+  }
+}
+@media screen and (max-width: 1024px) {
+  #gallery-page-body img:hover {
+    transform: none;
+  }
+  #gallery-page-body .img-container {
+    height: 100%;
+  }
+  #gallery-page-body .img-container:hover .img-content-hover {
+    display: none;
+  }
+  #gallery-page-body .img-content {
+    display: block;
+    padding: 1rem 0;
+  }
+}
+
+/* Updated CSS with nesting */
+.credit-card {
+  height: 100%;
+  min-height: 100%;
+  background-color: #e7e7e7;
+  font-family: "Roboto", sans-serif;
+  max-width: 800px;
+  min-width: 300;
+  margin: 60px auto 0;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.1);
+}
+.credit-card .form-header {
+  height: 60px;
+  padding: 20px 30px 0;
+  border-bottom: 1px solid #e1e8ee;
+}
+.credit-card .form-body {
+  height: auto;
+  padding: 30px 30px 20px;
+}
+.credit-card .title {
+  margin: 0;
+  color: #5e6977;
+  font-size: 18px;
+}
+.credit-card .card-number,
+.credit-card .cvv-input input,
+.credit-card .month select,
+.credit-card .year select {
+  height: 42px;
+  font-size: 14px;
+  font-weight: 100;
+  color: #3a3f43;
+  opacity: 0.7;
+  line-height: 14px;
+}
+.credit-card .card-number {
+  width: 100%;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  border: 2px solid #48494a;
+  border-radius: 6px;
+}
+.credit-card .month select,
+.credit-card .year select {
+  width: 100%;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  border: 2px solid #e1e8ee;
+  border-radius: 6px;
+  background: url("caret.png") no-repeat;
+  background-position: 85% 50%;
+}
+.credit-card .cvv-input input {
+  width: 100%;
+  float: left;
+  padding-left: 20px;
+  border: 2px solid #e1e8ee;
+  border-radius: 6px;
+  background: #fff;
+}
+.credit-card .cvv-details {
+  text-align: end;
+  margin-bottom: 20px;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 16px;
+  width: 100%;
+}
+.credit-card .cvv-details p {
+  margin-top: 6px;
+}
+.credit-card .proceed-btn,
+.credit-card .paypal-btn,
+.credit-card .google-wallet-btn,
+.credit-card .apple-pay-btn {
+  cursor: pointer;
+  margin-bottom: 10px;
+  width: 100%;
+  border-color: transparent;
+  border-radius: 6px;
+  color: black;
+  font-size: 16px;
+  text-align: center; /* Center align text */
+  padding: 10px 0; /* Added padding to accommodate image */
+  background: none; /* Remove background color */
+}
+.credit-card .paypal-btn {
+  background-color: rgb(0, 0, 255);
+}
+.credit-card .google-wallet-btn {
+  background-color: red;
+}
+.credit-card .apple-pay-btn {
+  border: 4px solid black;
+  background-color: rgb(255, 255, 255);
+}
+.credit-card .apple-pay-btn a {
+  color: black;
+}
+.credit-card .paypal-btn img,
+.credit-card .google-wallet-btn img,
+.credit-card .apple-pay-btn img {
+  width: 80px;
+  vertical-align: middle; /* Align image vertically */
+  margin-left: 10px; /* Add some spacing between text and image */
+}
+.credit-card .row {
+  display: flex;
+  justify-content: space-between;
+}
+.credit-card .col {
+  flex: 1;
+  margin-right: 10px;
+}
+.credit-card .proceed-btn {
+  margin-top: 20px;
+}
+.credit-card .payment-option {
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 5px;
+  width: 100%;
+  height: 80px;
+}
+.credit-card .payment-option img {
+  margin: auto;
+  width: 100%; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
 }
 
 /*# sourceMappingURL=style.css.map */

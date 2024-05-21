@@ -1,5 +1,5 @@
 <section id="subscription-plans">
-  <h1>Nos prix</h1>
+  <h1 class="mb-0">Nos prix</h1>
   <span>Choisir le Pack qui vous correspond le plus <i class="bi bi-arrow-down"></i></span>
 
   <div class="cards">
@@ -20,7 +20,7 @@
             <li>Pas de coaching</li>
           </ul>
         </div>
-        <a href="#">get started now <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+        <a href="../main pages/payment.php?plan=debutant">get started now <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
             <path fill-rule="evenodd" d="M12.97 3.97a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06l6.22-6.22H3a.75.75 0 0 1 0-1.5h16.19l-6.22-6.22a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
           </svg>
         </a>
@@ -44,7 +44,7 @@
             <li>Journées d'événmenets suplémentaires</li>
           </ul>
         </div>
-        <a href="#">get started now <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+        <a href="../main pages/payment.php?plan=athlete">get started now <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
             <path fill-rule="evenodd" d="M12.97 3.97a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06l6.22-6.22H3a.75.75 0 0 1 0-1.5h16.19l-6.22-6.22a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
           </svg>
         </a>
@@ -68,7 +68,7 @@
             <li>Journées d'événmenets suplémentaires</li>
           </ul>
         </div>
-        <a href="#">get started now <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+        <a href="../main pages/payment.php?plan=premium">get started now <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
             <path fill-rule="evenodd" d="M12.97 3.97a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06l6.22-6.22H3a.75.75 0 0 1 0-1.5h16.19l-6.22-6.22a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
           </svg>
         </a>
